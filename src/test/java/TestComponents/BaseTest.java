@@ -3,6 +3,7 @@ package TestComponents;
 
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 
@@ -18,24 +19,33 @@ import org.testng.annotations.BeforeTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import Utility.EnvReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObject.LoginPage;
 
 public class BaseTest {
 	public WebDriver driver;
-	public WebDriver driverInitializer(){
+	public LoginPage login;
+	public WebDriver driverInitializer(String browser){
+		if(browser.contains("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		}
+		if(browser.contains("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new ChromeDriver();
+		}
 		
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		return driver;
 	}
-	
-	public LoginPage launchApplication(String url) {
-		driver = driverInitializer();
-		LoginPage login = new LoginPage(driver);
-		login.goToLoginPage(url);
-		return login;
+	@BeforeMethod(alwaysRun = true)
+	public void launchApplication() throws FileNotFoundException, IOException {
+		driver = driverInitializer(new EnvReader().getProperty("browser"));
+		login = new LoginPage(driver);
+		login.goToLoginPage(new EnvReader().getProperty("url"));
+		
 	}
 	
 	

@@ -1,12 +1,10 @@
 package pageObject;
 
 
-import java.io.File;
+
 import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,11 +20,6 @@ public class LoginPage extends AbstractMethods {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-    public void goToLoginPage(String url) {
-		driver.get(url);
-	}
-	
 	@FindBy(xpath="//*[@name='username']")
 	WebElement userName;
 	
@@ -40,22 +33,32 @@ public class LoginPage extends AbstractMethods {
 	WebElement user;
 	@FindBy(css=".oxd-alert-content.oxd-alert-content--error")
 	WebElement invalidCred;
+	@FindBy(xpath="//span[text()='Required']")
+	WebElement blankText;
 	
-	public String login(String username, String pass, boolean shouldLoginSucceed) throws IOException {
+	
+    public void goToLoginPage(String url) {
+		driver.get(url);
+	}
+	
+	public void login(String username, String pass) throws IOException {
 		userName.sendKeys(username);
 		userPass.sendKeys(pass);
 		submitBtn.click();
-	if(shouldLoginSucceed){
+	}
+	public String getInvalidCreddentialsErrorMessage() {
+		return invalidCred.getText();
+	}
+	public String getBlankTextErrorMessage() {
+		return blankText.getText();
+	}
 	
-		return user.getText();
-		
-		 
-		}
-	
-	else{
-			return invalidCred.getText();
-		}
 	
 		
+		public DashboardPage loginToDashboard(String username, String pass) throws IOException {
+			userName.sendKeys(username);
+			userPass.sendKeys(pass);
+			submitBtn.click();
+			return new DashboardPage(driver);
 	}
 }
