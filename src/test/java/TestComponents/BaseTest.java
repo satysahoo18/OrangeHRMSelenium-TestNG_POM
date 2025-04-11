@@ -12,10 +12,12 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
@@ -26,23 +28,32 @@ import pageObject.LoginPage;
 public class BaseTest {
 	public WebDriver driver;
 	public LoginPage login;
+	
 	public WebDriver driverInitializer(String browser){
+		
 		if(browser.contains("chrome")) {
+			
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
 		if(browser.contains("firefox")) {
+			
 			WebDriverManager.firefoxdriver().setup();
-			driver = new ChromeDriver();
+			driver = new FirefoxDriver();
 		}
 		
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		return driver;
 	}
+	
+	
+	@Parameters("browser")
 	@BeforeMethod(alwaysRun = true)
-	public void launchApplication() throws FileNotFoundException, IOException {
-		driver = driverInitializer(new EnvReader().getProperty("browser"));
+
+	public void launchApplication(String browser) throws FileNotFoundException, IOException {
+//		browser= "chrome";
+		driver = driverInitializer(browser);
 		login = new LoginPage(driver);
 		login.goToLoginPage(new EnvReader().getProperty("url"));
 		
