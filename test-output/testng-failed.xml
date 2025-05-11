@@ -5,9 +5,8 @@
     <classes>
       <class name="Tests.DashboardPageTests">
         <methods>
-          <include name="userDropdownLogoutElementValidation"/>
           <include name="launchApplication"/>
-          <include name="prerequisites"/>
+          <include name="pageScrolling"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- Tests.DashboardPageTests -->

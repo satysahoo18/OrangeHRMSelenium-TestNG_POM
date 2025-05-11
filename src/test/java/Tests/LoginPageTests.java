@@ -27,7 +27,7 @@ public class LoginPageTests extends BaseTest {
 	
 
 	
-	@Test(description= "Verify the loging functionality with invalid credentials", dataProvider = "invalidLoginData")
+	@Test(testName = "loginValid",description= "Verify the loging functionality with invalid credentials", dataProvider = "invalidLoginData")
 	public void  loginValidationInvalid(HashMap<String,String> map) throws IOException {
 		   
 		   login.login(map.get("user"),map.get("pass"));

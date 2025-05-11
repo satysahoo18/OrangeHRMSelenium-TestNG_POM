@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,12 +19,52 @@ public class AbstractMethods {
 	public AbstractMethods(WebDriver driver) {
 		this.driver=driver;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		js= (JavascriptExecutor)driver;
 	}
 	
 	public  void ElementVisibility( WebDriver driver, WebElement element) {
 		
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
+	/**
+	 * 
+	 */
+	public void scrollUpTo(String value) {
+		
+//	    js.executeScript("window.scrollBy(0," + value +")");
+		js.executeScript("window.scrollBy({ top: 1000, left: 0, behavior: 'smooth' });");
+		
+	}
+	
+	
+	public void scrollToElement(WebElement element) throws InterruptedException {
+//		This will not be smooth
+		
+//		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		
+//      This is for smooth transition
+		js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", element);
+		
+//		The below line will not work always as it only accept CSS selecotor
+		
+//      js.executeScript("document.querySelector('"+element+"').scrollIntoView({behavior: 'smooth', block: 'start');");
+		
+//      js.executeScript("window.scrollBy({ top: document.body.scrollHeight, behavior: 'smooth' });");
+		
+		Thread.sleep(5000);
+		js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });"
+				,driver.findElement(By.xpath("//div[@class='oxd-grid-item oxd-grid-item--gutters orangehrm-dashboard-widget'][4]")));
+		
+	
+		
+		
+	}
+	
+	public void scrollIn(WebElement element) {
+		
+		js.executeScript("arguments[0].scrollTop=500;",element);
+	}
+	
 	
 	
 	/**

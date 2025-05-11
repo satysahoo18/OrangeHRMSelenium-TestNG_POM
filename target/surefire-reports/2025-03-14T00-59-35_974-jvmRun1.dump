@@ -1,0 +1,259 @@
+# Created at 2025-03-14T00:59:37.630
+Thread dump for process (18320@SatyaSahoo):
+"main" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@23/java.lang.Module.getClassLoader(Module.java:212)
+        at java.base@23/jdk.internal.logger.DefaultLoggerFinder$1.run(DefaultLoggerFinder.java:149)
+        at java.base@23/jdk.internal.logger.DefaultLoggerFinder$1.run(DefaultLoggerFinder.java:144)
+        at java.base@23/java.security.AccessController.executePrivileged(AccessController.java:778)
+        at java.base@23/java.security.AccessController.doPrivileged(AccessController.java:319)
+        at java.base@23/jdk.internal.logger.DefaultLoggerFinder.isSystem(DefaultLoggerFinder.java:144)
+        at java.logging@23/java.util.logging.Logger.demandLogger(Logger.java:652)
+        at java.logging@23/java.util.logging.Logger.getLogger(Logger.java:720)
+        at java.logging@23/java.util.logging.Logger.getLogger(Logger.java:703)
+        at app//freemarker.log._JULLoggerFactory.getLogger(_JULLoggerFactory.java:31)
+        at app//freemarker.log.Logger.getLogger(Logger.java:362)
+        at app//freemarker.template.utility.SecurityUtilities.<clinit>(SecurityUtilities.java:31)
+        at app//freemarker.ext.beans.ClassIntrospector.<clinit>(ClassIntrospector.java:92)
+        at app//freemarker.ext.beans.ClassIntrospectorBuilder.build(ClassIntrospectorBuilder.java:235)
+        at app//freemarker.ext.beans.BeansWrapper.<init>(BeansWrapper.java:362)
+        at app//freemarker.ext.beans.BeansWrapper.<init>(BeansWrapper.java:283)
+        at app//freemarker.ext.beans.BeansWrapperBuilder$BeansWrapperFactory.create(BeansWrapperBuilder.java:127)
+        at app//freemarker.ext.beans._BeansAPI.getBeansWrapperSubclassSingleton(_BeansAPI.java:173)
+        at app//freemarker.ext.beans.BeansWrapperBuilder.build(BeansWrapperBuilder.java:158)
+        at app//com.aventstack.extentreports.reporter.AbstractFileReporter.loadTemplateModel(AbstractFileReporter.java:55)
+        at app//com.aventstack.extentreports.reporter.ExtentSparkReporter.start(ExtentSparkReporter.java:136)
+        at app//com.aventstack.extentreports.reporter.ExtentSparkReporter$1.onSubscribe(ExtentSparkReporter.java:116)
+        at app//io.reactivex.rxjava3.subjects.PublishSubject.subscribeActual(PublishSubject.java:133)
+        at app//io.reactivex.rxjava3.core.Observable.subscribe(Observable.java:13262)
+        at app//com.aventstack.extentreports.ReactiveSubject.attachReporter(ReactiveSubject.java:38)
+        at app//com.aventstack.extentreports.ExtentReports.attachReporter(ExtentReports.java:66)
+        at app//TestComponents.BaseTest.getReport(BaseTest.java:66)
+        at app//TestComponents.Listener.<init>(Listener.java:17)
+        at java.base@23/java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(DirectMethodHandle$Holder)
+        at java.base@23/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
+        at java.base@23/jdk.internal.reflect.DirectConstructorHandleAccessor.invokeImpl(DirectConstructorHandleAccessor.java:86)
+        at java.base@23/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+        at java.base@23/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+        at java.base@23/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+        at app//org.testng.internal.objects.InstanceCreator.newInstance(InstanceCreator.java:38)
+        at app//org.testng.internal.objects.InstanceCreator.newInstance(InstanceCreator.java:59)
+        at app//org.testng.ITestObjectFactory.newInstance(ITestObjectFactory.java:10)
+        at app//org.testng.internal.objects.SimpleObjectDispenser.dispense(SimpleObjectDispenser.java:60)
+        at app//org.testng.internal.objects.GuiceBasedObjectDispenser.dispense(GuiceBasedObjectDispenser.java:28)
+        at app//org.testng.internal.DefaultListenerFactory.createListener(DefaultListenerFactory.java:29)
+        at app//org.testng.TestRunner.initListeners(TestRunner.java:399)
+        at app//org.testng.TestRunner.init(TestRunner.java:359)
+        at app//org.testng.TestRunner.init(TestRunner.java:309)
+        at app//org.testng.TestRunner.<init>(TestRunner.java:184)
+        at app//org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:652)
+        at app//org.testng.SuiteRunner.init(SuiteRunner.java:224)
+        at app//org.testng.SuiteRunner.<init>(SuiteRunner.java:116)
+        at app//org.testng.TestNG.createSuiteRunner(TestNG.java:1375)
+        at app//org.testng.TestNG.createSuiteRunners(TestNG.java:1349)
+        at app//org.testng.TestNG.runSuitesLocally(TestNG.java:1191)
+        at app//org.testng.TestNG.runSuites(TestNG.java:1114)
+        at app//org.testng.TestNG.run(TestNG.java:1082)
+        at app//org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+        at app//org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+        at app//org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+        at app//org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+"Reference Handler" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@23/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+        at java.base@23/java.lang.ref.Reference.processPendingReferences(Reference.java:246)
+        at java.base@23/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)
+
+"Finalizer" 
+   java.lang.Thread.State: WAITING
+        at java.base@23/java.lang.Object.wait0(Native Method)
+        at java.base@23/java.lang.Object.wait(Object.java:378)
+        at java.base@23/java.lang.Object.wait(Object.java:352)
+        at java.base@23/java.lang.ref.NativeReferenceQueue.await(NativeReferenceQueue.java:48)
+        at java.base@23/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:166)
+        at java.base@23/java.lang.ref.NativeReferenceQueue.remove(NativeReferenceQueue.java:89)
+        at java.base@23/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:173)
+
+"Signal Dispatcher" 
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" 
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" 
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@23/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@23/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+        at java.base@23/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+        at java.base@23/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+        at java.base@23/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+        at java.base@23/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+        at java.base@23/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+        at java.base@23/java.lang.Thread.runWith(Thread.java:1588)
+        at java.base@23/java.lang.Thread.run(Thread.java:1575)
+        at java.base@23/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
+
+"surefire-forkedjvm-stream-flusher" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@23/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@23/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+        at java.base@23/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+        at java.base@23/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+        at java.base@23/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+        at java.base@23/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+        at java.base@23/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base@23/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        at java.base@23/java.lang.Thread.runWith(Thread.java:1588)
+        at java.base@23/java.lang.Thread.run(Thread.java:1575)
+
+"surefire-forkedjvm-command-thread" 
+   java.lang.Thread.State: RUNNABLE
+        at java.management@23/sun.management.ThreadImpl.getThreadInfo1(Native Method)
+        at java.management@23/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:187)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.generateThreadDump(ForkedBooter.java:579)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.access$600(ForkedBooter.java:79)
+        at app//org.apache.maven.surefire.booter.ForkedBooter$4.update(ForkedBooter.java:322)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.callListeners(CommandReader.java:357)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:309)
+        at java.base@23/java.lang.Thread.runWith(Thread.java:1588)
+        at java.base@23/java.lang.Thread.run(Thread.java:1575)
+
+
+
+# Created at 2025-03-14T00:59:37.666
+Exiting self fork JVM. Received SHUTDOWN command from Maven shutdown hook.
+Thread dump before exiting the process (18320@SatyaSahoo):
+"main" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@23/java.lang.ClassLoader.defineClass1(Native Method)
+        at java.base@23/java.lang.ClassLoader.defineClass(ClassLoader.java:1026)
+        at java.base@23/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+        at java.base@23/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
+        at java.base@23/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
+        at java.base@23/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
+        at java.base@23/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
+        at java.base@23/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+        at java.base@23/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+        at app//freemarker.ext.beans.ClassIntrospector.addPropertyDescriptorToClassIntrospectionData(ClassIntrospector.java:701)
+        at app//freemarker.ext.beans.ClassIntrospector.addBeanInfoToClassIntrospectionData(ClassIntrospector.java:337)
+        at app//freemarker.ext.beans.ClassIntrospector.createClassIntrospectionData(ClassIntrospector.java:296)
+        at app//freemarker.ext.beans.ClassIntrospector.get(ClassIntrospector.java:260)
+        at app//freemarker.ext.beans.ClassBasedModelFactory.getInternal(ClassBasedModelFactory.java:101)
+        at app//freemarker.ext.beans.ClassBasedModelFactory.get(ClassBasedModelFactory.java:50)
+        at app//freemarker.ext.beans._EnumModels.get(_EnumModels.java:31)
+        at app//com.aventstack.extentreports.reporter.AbstractFileReporter.loadTemplateModel(AbstractFileReporter.java:59)
+        at app//com.aventstack.extentreports.reporter.ExtentSparkReporter.start(ExtentSparkReporter.java:136)
+        at app//com.aventstack.extentreports.reporter.ExtentSparkReporter$1.onSubscribe(ExtentSparkReporter.java:116)
+        at app//io.reactivex.rxjava3.subjects.PublishSubject.subscribeActual(PublishSubject.java:133)
+        at app//io.reactivex.rxjava3.core.Observable.subscribe(Observable.java:13262)
+        at app//com.aventstack.extentreports.ReactiveSubject.attachReporter(ReactiveSubject.java:38)
+        at app//com.aventstack.extentreports.ExtentReports.attachReporter(ExtentReports.java:66)
+        at app//TestComponents.BaseTest.getReport(BaseTest.java:66)
+        at app//TestComponents.Listener.<init>(Listener.java:17)
+        at java.base@23/java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(DirectMethodHandle$Holder)
+        at java.base@23/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
+        at java.base@23/jdk.internal.reflect.DirectConstructorHandleAccessor.invokeImpl(DirectConstructorHandleAccessor.java:86)
+        at java.base@23/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+        at java.base@23/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+        at java.base@23/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+        at app//org.testng.internal.objects.InstanceCreator.newInstance(InstanceCreator.java:38)
+        at app//org.testng.internal.objects.InstanceCreator.newInstance(InstanceCreator.java:59)
+        at app//org.testng.ITestObjectFactory.newInstance(ITestObjectFactory.java:10)
+        at app//org.testng.internal.objects.SimpleObjectDispenser.dispense(SimpleObjectDispenser.java:60)
+        at app//org.testng.internal.objects.GuiceBasedObjectDispenser.dispense(GuiceBasedObjectDispenser.java:28)
+        at app//org.testng.internal.DefaultListenerFactory.createListener(DefaultListenerFactory.java:29)
+        at app//org.testng.TestRunner.initListeners(TestRunner.java:399)
+        at app//org.testng.TestRunner.init(TestRunner.java:359)
+        at app//org.testng.TestRunner.init(TestRunner.java:309)
+        at app//org.testng.TestRunner.<init>(TestRunner.java:184)
+        at app//org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:652)
+        at app//org.testng.SuiteRunner.init(SuiteRunner.java:224)
+        at app//org.testng.SuiteRunner.<init>(SuiteRunner.java:116)
+        at app//org.testng.TestNG.createSuiteRunner(TestNG.java:1375)
+        at app//org.testng.TestNG.createSuiteRunners(TestNG.java:1349)
+        at app//org.testng.TestNG.runSuitesLocally(TestNG.java:1191)
+        at app//org.testng.TestNG.runSuites(TestNG.java:1114)
+        at app//org.testng.TestNG.run(TestNG.java:1082)
+        at app//org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+        at app//org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+        at app//org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+        at app//org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+"Reference Handler" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@23/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+        at java.base@23/java.lang.ref.Reference.processPendingReferences(Reference.java:246)
+        at java.base@23/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)
+
+"Finalizer" 
+   java.lang.Thread.State: WAITING
+        at java.base@23/java.lang.Object.wait0(Native Method)
+        at java.base@23/java.lang.Object.wait(Object.java:378)
+        at java.base@23/java.lang.Object.wait(Object.java:352)
+        at java.base@23/java.lang.ref.NativeReferenceQueue.await(NativeReferenceQueue.java:48)
+        at java.base@23/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:166)
+        at java.base@23/java.lang.ref.NativeReferenceQueue.remove(NativeReferenceQueue.java:89)
+        at java.base@23/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:173)
+
+"Signal Dispatcher" 
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" 
+   java.lang.Thread.State: RUNNABLE
+
+"Notification Thread" 
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@23/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@23/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+        at java.base@23/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+        at java.base@23/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+        at java.base@23/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+        at java.base@23/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+        at java.base@23/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+        at java.base@23/java.lang.Thread.runWith(Thread.java:1588)
+        at java.base@23/java.lang.Thread.run(Thread.java:1575)
+        at java.base@23/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
+
+"surefire-forkedjvm-stream-flusher" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@23/jdk.internal.misc.Unsafe.park(Native Method)
+        at java.base@23/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+        at java.base@23/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+        at java.base@23/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+        at java.base@23/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+        at java.base@23/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+        at java.base@23/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+        at java.base@23/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        at java.base@23/java.lang.Thread.runWith(Thread.java:1588)
+        at java.base@23/java.lang.Thread.run(Thread.java:1575)
+
+"surefire-forkedjvm-command-thread" 
+   java.lang.Thread.State: RUNNABLE
+        at java.management@23/sun.management.ThreadImpl.getThreadInfo1(Native Method)
+        at java.management@23/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:187)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.generateThreadDump(ForkedBooter.java:579)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.access$600(ForkedBooter.java:79)
+        at app//org.apache.maven.surefire.booter.ForkedBooter$4.update(ForkedBooter.java:315)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.callListeners(CommandReader.java:357)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.exitByConfiguration(CommandReader.java:367)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:330)
+        at java.base@23/java.lang.Thread.runWith(Thread.java:1588)
+        at java.base@23/java.lang.Thread.run(Thread.java:1575)
+
+
+

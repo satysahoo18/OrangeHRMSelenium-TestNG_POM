@@ -26,8 +26,21 @@ public class DashboardPage extends AbstractMethods{
 	public String getDashBoardTittle() {
 		return dashBoardTittle.getText();
 	}
+	@FindBy(xpath="//p[text()='My Actions']")
+	WebElement scroll;
 	
-	
+	@FindBy(xpath="//div[@class='oxd-grid-item oxd-grid-item--gutters orangehrm-dashboard-widget'][4]//div[@class='orangehrm-dashboard-widget-body --scroll-visible']")
+	WebElement scrollbox;
+	public String dashboardPageScroll(String value) throws InterruptedException {
+		Thread.sleep(3000);
+		scrollUpTo(value);
+		Thread.sleep(3000);
+		scrollToElement(scroll);
+		Thread.sleep(3000);
+		scrollIn(scrollbox);
+		Thread.sleep(3000);	
+		return scrollbox.getText()	;
+	}
 
 	
 }

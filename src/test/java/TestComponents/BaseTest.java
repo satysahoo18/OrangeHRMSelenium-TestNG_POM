@@ -24,19 +24,22 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import Utility.EnvReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObject.LoginPage;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseTest {
 	public WebDriver driver;
 	public LoginPage login;
 	
 	public WebDriver driverInitializer(String browser){
+	    String	browser1 = System.getProperty("browser")!=null?System.getProperty("browser"):browser;
 		
-		if(browser.contains("chrome")) {
-			
+		if(browser1.contains("chrome")) {
+			ChromeOptions options = new ChromeOptions();
+//			options.addArguments("--window-size=1000,500");
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
 		}
-		if(browser.contains("firefox")) {
+		if(browser1.contains("firefox")) {
 			
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
@@ -44,6 +47,7 @@ public class BaseTest {
 		
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().window().maximize();
 		return driver;
 	}
 	
@@ -51,8 +55,8 @@ public class BaseTest {
 	@Parameters("browser")
 	@BeforeMethod(alwaysRun = true)
 
-	public void launchApplication(String browser) throws FileNotFoundException, IOException {
-//		browser= "chrome";
+	public void launchApplication(@Optional("chrome")String browser) throws FileNotFoundException, IOException {
+
 		driver = driverInitializer(browser);
 		login = new LoginPage(driver);
 		login.goToLoginPage(new EnvReader().getProperty("url"));

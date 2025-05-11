@@ -28,7 +28,7 @@
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>7.8.0</version>
+    <version>7.9.0</version>
     <scope>test</scope>
 </dependency>
 
@@ -109,6 +109,7 @@
                          </suiteXmlFiles>
                     </configuration>
                 </plugin>
+                
             </plugins>
         </build>
     </profile>
@@ -122,16 +123,17 @@
                      <version>3.3.0</version>
                    
                 </plugin>
-                <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.3.0</version> <!-- or any stable version -->
-            <configuration>
-                <suiteXmlFiles>
-                    <suiteXmlFile>${testng3.xml}</suiteXmlFile>
-                </suiteXmlFiles>
-            </configuration>
-        </plugin>
+                
+                     <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                     <version>3.3.0</version>
+                   <configuration>
+                   <suiteXmlFiles>
+                   <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                   </suiteXmlFiles>
+                   </configuration>
+                </plugin>
                  
             </plugins>
         </build>

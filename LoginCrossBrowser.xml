@@ -6,7 +6,7 @@
   </listeners>
   
   
-  <test  name="Test Chrome">
+  <test  name="Test Chrome" parallel="methods" thread-count="4">
   <parameter name="browser" value="chrome"></parameter>
     <classes>
       <class name="Tests.LoginPageTests">
@@ -16,7 +16,7 @@
       </class>
     </classes>
   </test> <!-- Test -->
-  <test  name="Test Firefox">
+  <test  name="Test Firefox" parallel="methods" thread-count="4">
   <parameter name="browser" value="firefox"></parameter>
     <classes>
       <class name="Tests.LoginPageTests">
