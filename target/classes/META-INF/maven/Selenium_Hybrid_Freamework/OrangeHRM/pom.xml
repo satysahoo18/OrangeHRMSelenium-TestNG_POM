@@ -105,7 +105,7 @@
                             <include>**/YourCucumberRunner.java</include>
                         </includes>  -->   
                          <suiteXmlFiles>
-                           <suiteXmlFile>testng3.xml</suiteXmlFile>
+                           <suiteXmlFile>testng.xml</suiteXmlFile>
                          </suiteXmlFiles>
                     </configuration>
                 </plugin>
