@@ -16,6 +16,7 @@ public class DashboardPageTests extends BaseTest {
 	public void pageScrolling() throws IOException, InterruptedException {
 		dashboard=login.loginToDashboard("Admin", "admin123");
 		String s  = dashboard.dashboardPageScroll("1000");
+		System.out.println("WebHook");
 		
 		
 	}
