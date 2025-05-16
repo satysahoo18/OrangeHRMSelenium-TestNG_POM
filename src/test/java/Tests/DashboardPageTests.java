@@ -14,7 +14,7 @@ public class DashboardPageTests extends BaseTest {
 	DashboardPage dashboard;
 	@Test(retryAnalyzer = Retryer.class)
 	public void pageScrolling() throws IOException, InterruptedException {
-		dashboard=login.loginToDashboard("Admn", "admin123");
+		dashboard=login.loginToDashboard("Admin", "admin123");
 		String s  = dashboard.dashboardPageScroll("1000");
 		
 		
